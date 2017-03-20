@@ -1350,7 +1350,7 @@ help = [[متن راهنمای مالک ربات ثبت نشده است.]]
     end
    bot.sendMessage(msg.chat_id_, msg.id_, 1, help, 1, 'html')
   end
-  end
+  
 function tdcli_update_callback(data)
     if (data.ID == "UpdateNewMessage") then
      run(data.message_,data)
