@@ -1,5 +1,5 @@
-bot = dofile('/home/username/data/utils.lua')
-json = dofile('/home/username/data/JSON.lua')
+bot = dofile('/root/aaapi-cliii-fortel-gram-boot/cli/data/utils.lua')
+json = dofile('/root/aaapi-cliii-fortel-gram-boot/cli/data/JSON.lua')
 URL = require "socket.url"
 serpent = require("serpent")
 http = require "socket.http"
