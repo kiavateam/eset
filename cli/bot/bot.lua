@@ -1,14 +1,14 @@
-bot = dofile('/root/aaapi-cliii-fortel-gram-boot/cli/data/utils.lua')
-json = dofile('/root/aaapi-cliii-fortel-gram-boot/cli/data/JSON.lua')
+bot = dofile('/root/aaapi-cliii-fortel-gram-boot/data/utils.lua')
+json = dofile('/root/aaapi-cliii-fortel-gram-boot/data/JSON.lua')
 URL = require "socket.url"
 serpent = require("serpent")
 http = require "socket.http"
 https = require "ssl.https"
 redis = require('redis')
 db = redis.connect('127.0.0.1', 6379)
-BASE = '/root/aaapi-cliii-fortel-gram-boot/api/api.lua'
+BASE = '/root/aaapi-cliii-fortel-gram-boot/api/bot/'
 SUDO = 250049437 --sudo id
-sudo_users = {250049437,123456789,Userid}
+sudo_users = {304107094,123456789,Userid}
 BOTS = 339652856 --bot id
 bot_id = db:get(SUDO..'bot_id')
 function vardump(value)
@@ -39,7 +39,7 @@ end
 end
 ------------------------------------------------------------
 function is_bot(msg)
-  if tonumber(BOTS) == 313139061 then
+  if tonumber(BOTS) == 339652856 then
     return true
     else
     return false
@@ -687,7 +687,6 @@ end
         else
            bot.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),prom_reply)  
           end
-        end
         if text and text:match('^masterdem (%d+)') then
           local master = text:match('masterdem (%d+)')
          db:srem(SUDO..'masters:'..master)
@@ -755,7 +754,7 @@ end
           for k,v in pairs(list) do
           t = t..k.." - <code>"..v.."</code>\n" 
           end
-          t = t..'\nبرای مشاهده کاربر از دستور زیر استفاده کنید \n<code>/whois [آیدی کاربر]</code>\n مثال :\n <code>/whois 250049437</code>'
+          t = t..'\nبرای مشاهده کاربر از دستور زیر استفاده کنید \n<code>/whois [آیدی کاربر]</code>\n مثال :\n <code>/whois 234458457</code>'
           if #list == 0 then
           t = '<code>>لیست مالکان گروه خالی میباشد!</code>'
           end
@@ -876,7 +875,7 @@ end
             end
           tdcli_function({
       ID = "GetInlineQueryResults",
-      bot_user_id_ = 339652856,
+      bot_user_id_ = 379506376,
       chat_id_ = msg.chat_id_,
       user_location_ = {
         ID = "Location",
@@ -977,7 +976,7 @@ end
           for k,v in pairs(list) do
           t = t..k.." - <code>"..v.."</code>\n" 
           end
-          t = t..'\n<code>>برای مشاهده کاربر از دستور زیر استفاده کنید </code> \n<code>/whois [آیدی کاربر]</code>\n مثال :\n <code>/whois 250049437</code>'
+          t = t..'\n<code>>برای مشاهده کاربر از دستور زیر استفاده کنید </code> \n<code>/whois [آیدی کاربر]</code>\n مثال :\n <code>/whois 159887854</code>'
           if #list == 0 then
           t = 'لیست افراد میوت شده خالی است !'
           end
@@ -1236,7 +1235,6 @@ end
           end
         end
       end
-      end
    -- member
    if text == 'ping' then
           local a = {"<code>ربات فعال و آماده کار است.</code>","<code>ربات فعال است</code>","<b>pong!</b>"}
@@ -1271,6 +1269,7 @@ end
          local msgs = db:get(SUDO..'total:messages:'..msg.chat_id_..':'..msg.sender_user_id_)
          bot.sendMessage(msg.chat_id_, msg.id_, 1, '<code>شناسه:</code> [<b>'..msg.sender_user_id_..'</b>]\n<code>تعداد پیام ها:</code> [<b>'..msgs..'</b>]', 1, 'html')
       end
+end
 end
   
   
@@ -1349,7 +1348,7 @@ help = [[متن راهنمای مالک ربات ثبت نشده است.]]
     help = [[متن راهنما برای کاربران عادی ثبت نشده است.]]
     end
    bot.sendMessage(msg.chat_id_, msg.id_, 1, help, 1, 'html')
-      end
+  end
   end
 function tdcli_update_callback(data)
     if (data.ID == "UpdateNewMessage") then
