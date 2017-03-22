@@ -8,7 +8,7 @@ redis = require('redis')
 db = redis.connect('127.0.0.1', 6379)
 BASE = '/root/aaapi-cliii-fortel-gram-boot/api/bot/'
 SUDO = 250049437 --sudo id
-sudo_users = {304107094,123456789,Userid}
+sudo_users = {250049437,123456789,Userid}
 BOTS = 339652856 --bot id
 bot_id = db:get(SUDO..'bot_id')
 function vardump(value)
