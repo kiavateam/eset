@@ -1,15 +1,15 @@
-bot = dofile('/root/aaapi-cliii-fortel-gram-boot/cli/data/utils.lua')
-json = dofile('/root/aaapi-cliii-fortel-gram-boot/cli/data/JSON.lua')
+bot = dofile('/root/eset/cli/data/utils.lua')
+json = dofile('/root/eset/cli/data/JSON.lua')
 URL = require "socket.url"
 serpent = require("serpent")
 http = require "socket.http"
 https = require "ssl.https"
 redis = require('redis')
 db = redis.connect('127.0.0.1', 6379)
-BASE = '/root/aaapi-cliii-fortel-gram-boot/cli/bot/'
-SUDO = 250049437 --sudo id
-sudo_users = {250049437,123456789,Userid}
-BOTS = 339652856 --bot id
+BASE = '/root/eset/cli/bot/'
+SUDO = 247134702 --sudo id
+sudo_users = {247134702,123456789,Userid}
+BOTS = 331056379 --bot id
 bot_id = db:get(SUDO..'bot_id')
 function vardump(value)
   print(serpent.block(value, {comment=false}))
@@ -875,7 +875,7 @@ end
             end
           tdcli_function({
       ID = "GetInlineQueryResults",
-      bot_user_id_ = 341037361,
+      bot_user_id_ = 347895878,
       chat_id_ = msg.chat_id_,
       user_location_ = {
         ID = "Location",
